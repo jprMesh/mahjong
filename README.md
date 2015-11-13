@@ -1,2 +1,2 @@
-# mahjong
-mahjong game
+# Mahjong
+Python Mahjong game engine
