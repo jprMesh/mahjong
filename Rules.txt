@@ -2,18 +2,19 @@ Rules of HK Mahjong
 
 Setup:
     Tiles are shuffled face down on the table.
-    Each player will create a wall of tiles in front of them, 18 wide and 2 high
+    Each player will create a wall of tiles in front of them, 18 wide and 2 high, face down
     Roll dice to determine who goes first
     Highest roll becomes the East wind, then going to South, West, and North counterclockwise
     Turn order is counterclockwise starting from East
     The starting wind is East, and the indicator is given to the East seat
-    The East seat rolls the dice to determine which wall to break first, excluding himself
+    The East seat rolls the dice to determine which wall to break first, beginning with the next wall
     From the left of the wall from the perspective of the wall's builder, 
         count the dice-roll-number of tiles from the left and break from there
     Each player will take 4 tiles at a time until everyone has 12 tiles
+    All tiles drawn are then set upright in front of the player, forming their hand
     The East player will then draw a tile from the wall and then skip over one tile and take a 14th tile
     The remaining players will then draw their 13th tile in order
-    The East player then discards a tile, and the game begins
+    The East player then discards a tile to the center of the table, face up, and the game begins
 
 To win in Mahjong, your hand must contain satisfy certain win conditions
     Most win condition hands contain 4 triplets and a pair
@@ -23,7 +24,7 @@ To win in Mahjong, your hand must contain satisfy certain win conditions
     There are other winning hands that don't follow the above model, more on those later
 
 A turn in Mahjong consists of drawing a tile from the wall (in the order the tiles were dealt)
-    The player will then choose a tile in his/her hand to discard into the middle of the table
+    The player will then choose a tile in his/her hand to discard into the middle of the table, face up
 If a discarded tile can be used by another player to complete a pung:
     That other player can call 'pung' and take the tile and use it to complete the pung
     The tiles used in the pung are then placed in front of the player, face up
