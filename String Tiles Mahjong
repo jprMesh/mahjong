@@ -1,0 +1,37 @@
+from Players import Players
+from random import randint
+from random import shuffle
+from random import choice
+
+#Dice rolling function
+#3 dice are rolled instead of one 18 sided die
+#This probably makes dice graphics easier later
+def diceRoll():
+    dice1 = Random.randint(1,6)
+    dice2 = Random.randint(1,6)
+    dice3 = Random.randint(1,6)
+    totalSum = dice1 + dice2 + dice3
+    return totalSum
+
+suits = ["B", "C", "D", "H"]
+winds = ["East", "South", "West", "North"]
+#honorValues = ["E", "S", "W", "N", "R", "G", "B", "Flower", "Season"] 1-9
+
+
+class Mahjong():
+    """Game management class"""
+    def __init__(self):
+        self.generateWall()
+        self.addPlayers()
+        self.prevailingWind = choice(winds)
+
+    def generateWall(self):
+        self.wall = [str(val+1) + suit]
+            for val in xrange(9)
+            for suit in suits
+        shuffle(self.wall)
+
+    def addPlayers(self):
+        self.players = [Players(wind, self.wall) for wind in winds]
+
+Mahjong()
