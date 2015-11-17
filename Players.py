@@ -1,6 +1,7 @@
 class Players:
 	wind = ""	#E, S, W, N
 	hand = []	#initialize empty hand list
+	displayedTiles = []
 
 	def __init__(self, wind, hand):
 		self.wind = wind
@@ -17,3 +18,6 @@ class Players:
 	#discard a tile, need to choose by mouse movements
 	def discard(tile):
 		hand.pop(tile)
+
+	#Win conditions
+	#def winConditionCheck(hand):
