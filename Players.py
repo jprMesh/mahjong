@@ -3,11 +3,11 @@ class Players:
     hand = []   #initialize empty hand list
     displayedTiles = []
 
-    def __init__(self, wind):
+    def __init__(self, wind, wall):
         self.wind = wind
-        self.loadHand()
+        self.loadHand(wall)
 
-    def loadHand(self):
+    def loadHand(self, wall):
         for i in xrange(13):
             self.hand.append(wall.pop())
 

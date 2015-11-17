@@ -22,7 +22,7 @@ class Mahjong():
     """Game management class"""
     def __init__(self):
         self.generateWall()
-        #self.addPlayers()
+        self.addPlayers()
         self.prevailingWind = choice(winds)
 
     def generateWall(self):
@@ -33,6 +33,6 @@ class Mahjong():
         shuffle(self.wall)
 
     def addPlayers(self):
-        self.players = [Players(wind) for wind in winds]
+        self.players = [Players(wind, self.wall) for wind in winds]
 
 Mahjong()
