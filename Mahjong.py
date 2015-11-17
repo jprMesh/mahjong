@@ -13,11 +13,6 @@ def diceRoll():
     totalSum = dice1 + dice2 + dice3
     return totalSum
 
-#set up the game
-def loadHand():
-    for i in range(13):
-        hand.append(wall.pop())
-
 suits = ["Bamboo", "Dot", "Character"]
 honorValues = ["E", "S", "W", "N", "R", "G", "B", "Flower", "Season"]
 winds = ["East", "South", "West", "North"]
@@ -39,18 +34,14 @@ for i in range(4):    #4 copies of every tile
 shuffle(wall)
 
 #set up the Players
-loadHand()
-player1 = Players(wind="", hand=hand)
-players.append(player1)
-hand[:] = []
-loadHand()
-player2 = Players(wind="", hand=hand)
-players.append(player2)
-hand[:] = []
-loadHand()
-player3 = Players(wind="", hand=hand)
-players.append(player3)
-hand[:] = []
-loadHand()
-player4 = Players(wind="", hand=hand)
-players.append(player4)
+eastPlayer = Players(wind="")
+players.append(eastPlayer)
+
+southPlayer = Players(wind="")
+players.append(southPlayer)
+
+westPlayer = Players(wind="")
+players.append(westPlayer)
+
+northPlayer = Players(wind="")
+players.append(northPlayer)
