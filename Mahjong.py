@@ -15,21 +15,22 @@ def diceRoll():
 
 #set up the game
 def loadHand():
-    for i in range(13)
+    for i in range(13):
         hand.append(wall.pop())
 
-suits = ["Bamboo", "Dot", "Character", "Honor"]
+suits = ["Bamboo", "Dot", "Character"]
 honorValues = ["E", "S", "W", "N", "R", "G", "B", "Flower", "Season"]
 winds = ["East", "South", "West", "North"]
 wall = []   #initialize empty wall list
 hand = []
 diceRolls = []
 prevailingWind = "" 
+players = []
 
 #Populate the tiles list
 for i in range(4):    #4 copies of every tile
-    for suit in suits[:3]:     #for suited tiles
-        for n in range(10):   #numbers 1-9
+    for suit in suits:     #for suited tiles
+        for n in range(1,10):   #numbers 1-9
             tile = Tile(suit=suit, value=n)
             wall.append(tile)
     for value in honorValues:   #for honor tiles
@@ -39,18 +40,17 @@ shuffle(wall)
 
 #set up the Players
 loadHand()
-player1 = Player(hand=hand)
+player1 = Players(wind="", hand=hand)
+players.append(player1)
 hand[:] = []
 loadHand()
-player2 = Player(hand=hand)
+player2 = Players(wind="", hand=hand)
+players.append(player2)
 hand[:] = []
 loadHand()
-player3 = Player(hand=hand)
+player3 = Players(wind="", hand=hand)
+players.append(player3)
 hand[:] = []
 loadHand()
-player4 = Player(hand=hand)
-diceRolls.append(diceRoll())
-diceRolls.append(diceRoll())
-diceRolls.append(diceRoll())
-diceRolls.append(diceRoll())
-for i in range(4)
+player4 = Players(wind="", hand=hand)
+players.append(player4)
