@@ -1,10 +1,9 @@
 class Players:
-    wind = ""   #E, S, W, N
-    hand = []   #initialize empty hand list
-    displayedTiles = []
+    """Mahjong player class"""
 
     def __init__(self, wind, wall):
         self.wind = wind
+        self.hand = []
         self.loadHand(wall)
 
     def loadHand(self, wall):
@@ -22,6 +21,3 @@ class Players:
     #discard a tile, need to choose by mouse movements
     def discard(tile):
         hand.pop(tile)
-
-    #Win conditions
-    #def winConditionCheck(hand):
