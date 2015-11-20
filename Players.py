@@ -1,4 +1,4 @@
-class Players:
+class Player:
     """Mahjong player class"""
 
     def __init__(self, wind, wall):
@@ -11,13 +11,13 @@ class Players:
             self.hand.append(wall.pop())
 
     #draw from the wall, normal animation
-    def draw():
-        hand.append(wall.pop())
+    def draw(self):
+        self.hand.append(wall.pop())
 
     #draw from the wall, but have the animation draw from the back
-    def backDraw():
-        hand.append(wall.pop())
+    def backDraw(self):
+        self.hand.append(wall.pop())
 
     #discard a tile, need to choose by mouse movements
-    def discard(tile):
-        hand.pop(tile)
+    def discard(self, tile):
+        self.hand.pop(tile)

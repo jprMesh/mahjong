@@ -1,5 +1,5 @@
 from Tile import Tile
-from Players import Players
+from Players import Player
 import random
 
 class Mahjong:
@@ -31,7 +31,7 @@ class Mahjong:
         random.shuffle(self.wall)
 
     def addPlayers(self):
-        self.players = [Players(wind, self.wall) for wind in Mahjong.winds]
+        self.players = [Player(wind, self.wall) for wind in Mahjong.winds]
 
 game = Mahjong()
 print game.players[0].hand
