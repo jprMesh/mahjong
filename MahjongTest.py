@@ -11,14 +11,11 @@ class MahjongTest(unittest.TestCase):
     def tearDown(self):
         del self.mjgame
 
-    def testPlayers(self):
+    def testSetup(self):
         self.assertEqual(len(self.mjgame.players), 4)
-        self.assertEqual(self.mjgame.prevailingWind, "East")
-
-    def testWall(self):
+        self.assertEqual(Mahjong.winds[self.mjgame.prevailingWind], "East")
+        self.assertEqual(Mahjong.winds[self.mjgame.turnIndic], "East")
         self.assertEqual(len(self.mjgame.wall), (4*4*9)-(13*4))
-
-    def testHand(self):
         self.assertEqual(len(self.mjgame.players[0].hand), 13)
 
     def testHandContains(self):
@@ -26,11 +23,13 @@ class MahjongTest(unittest.TestCase):
         self.assertFalse(self.mjgame.players[0].handContains(20))
 
     def testDiscard(self):
-        length = len(self.mjgame.players[1].hand)
+        handlen = len(self.mjgame.players[1].hand)
+        turn = self.mjgame.turnIndic
         tile = self.mjgame.players[1].hand[3]
         self.mjgame.players[1].discard(tile, self.mjgame)
-        self.assertEqual(len(self.mjgame.players[1].hand), length-1)
+        self.assertEqual(len(self.mjgame.players[1].hand), handlen-1)
         self.assertEqual(self.mjgame.pile, tile)
+        self.assertEqual(self.mjgame.turnIndic, (turn+1)%4)
 
     def testDraw(self):
         handlen = len(self.mjgame.players[2].hand)

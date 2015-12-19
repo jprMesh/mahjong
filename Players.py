@@ -22,6 +22,7 @@ class Player:
     def discard(self, tile, game):
         game.pile = tile
         self.hand.remove(tile)
+        game.turnIndic = (game.turnIndic + 1) % 4
 
     def handContains(self, digit):
         for tile in self.hand:

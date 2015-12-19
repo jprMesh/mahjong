@@ -21,8 +21,9 @@ class Mahjong:
     def __init__(self):
         self.generateWall()
         self.addPlayers()
-        self.prevailingWind = "East"
+        self.prevailingWind = 0
         self.pile = []
+        self.turnIndic = 0
 
     def generateWall(self):
         self.wall = [Tile(suit, val+1+(suit=="Honor")*10)
