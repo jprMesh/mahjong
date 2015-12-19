@@ -11,7 +11,7 @@ class Player:
             self.hand.append(wall.pop())
 
     #draw from the wall, normal animation
-    def draw(self):
+    def draw(self, wall):
         self.hand.append(wall.pop())
 
     #draw from the wall, but have the animation draw from the back
@@ -19,8 +19,9 @@ class Player:
         self.hand.append(wall.pop())
 
     #discard a tile, need to choose by mouse movements
-    def discard(self, tile):
-        self.hand.pop(tile)
+    def discard(self, tile, game):
+        game.pile = tile
+        self.hand.remove(tile)
 
     def handContains(self, digit):
         for tile in self.hand:

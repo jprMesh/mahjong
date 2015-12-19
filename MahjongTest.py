@@ -22,14 +22,22 @@ class MahjongTest(unittest.TestCase):
         self.assertEqual(len(self.mjgame.players[0].hand), 13)
 
     def testHandContains(self):
-        for x in range(13):
-            self.mjgame.players[0].hand.pop()
-        randvalue = random.randint(1,9)
-        randtile = Tile(random.choice(["Bamboo", "Dot", "Character", "Honor"]), randvalue)
-        self.mjgame.players[0].hand.append(randtile)
-        self.assertTrue(self.mjgame.players[0].handContains(randvalue))
-        self.mjgame.players[0].hand.pop()
-        self.assertFalse(self.mjgame.players[0].handContains(randvalue))
+        self.assertTrue(self.mjgame.players[0].handContains(self.mjgame.players[0].hand[5].value))
+        self.assertFalse(self.mjgame.players[0].handContains(20))
+
+    def testDiscard(self):
+        length = len(self.mjgame.players[1].hand)
+        tile = self.mjgame.players[1].hand[3]
+        self.mjgame.players[1].discard(tile, self.mjgame)
+        self.assertEqual(len(self.mjgame.players[1].hand), length-1)
+        self.assertEqual(self.mjgame.pile, tile)
+
+    def testDraw(self):
+        handlen = len(self.mjgame.players[2].hand)
+        walllen = len(self.mjgame.wall)
+        self.mjgame.players[2].draw(self.mjgame.wall)
+        self.assertEqual(len(self.mjgame.players[2].hand), handlen+1)
+        self.assertEqual(len(self.mjgame.wall), walllen-1)
 
 if __name__ == '__main__':
     unittest.main()
