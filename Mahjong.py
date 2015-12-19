@@ -32,6 +32,3 @@ class Mahjong:
 
     def addPlayers(self):
         self.players = [Player(wind, self.wall) for wind in Mahjong.winds]
-
-game = Mahjong()
-print(game.players[0].hand)
