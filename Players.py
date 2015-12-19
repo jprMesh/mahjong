@@ -7,7 +7,7 @@ class Player:
         self.loadHand(wall)
 
     def loadHand(self, wall):
-        for i in xrange(13):
+        for i in range(13):
             self.hand.append(wall.pop())
 
     #draw from the wall, normal animation
