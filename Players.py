@@ -21,3 +21,9 @@ class Player:
     #discard a tile, need to choose by mouse movements
     def discard(self, tile):
         self.hand.pop(tile)
+
+    def handContains(self, digit):
+        for tile in self.hand:
+            if tile.value == digit:
+                return True
+        return False
