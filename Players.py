@@ -20,7 +20,7 @@ class Player:
 
     #discard a tile, need to choose by mouse movements
     def discard(self, tile, game):
-        game.pile = tile
+        game.pile.append(tile)
         self.hand.remove(tile)
         game.turnIndic = (game.turnIndic + 1) % 4
 
