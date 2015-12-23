@@ -24,12 +24,11 @@ class MahjongTest(unittest.TestCase):
 
     def testDiscard(self):
         handlen = len(self.mjgame.players[1].hand)
-        turn = self.mjgame.turnIndic
         tile = self.mjgame.players[1].hand[3]
         self.mjgame.players[1].discard(tile, self.mjgame)
         self.assertEqual(len(self.mjgame.players[1].hand), handlen-1)
         self.assertEqual(self.mjgame.pile[-1], tile)
-        self.assertEqual(self.mjgame.turnIndic, (turn+1)%4)
+        self.assertEqual(self.mjgame.turnIndic, (self.mjgame.players[1].wind+1)%4)
 
     def testDraw(self):
         handlen = len(self.mjgame.players[2].hand)

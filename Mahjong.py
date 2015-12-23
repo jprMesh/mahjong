@@ -27,10 +27,10 @@ class Mahjong:
 
     def generateWall(self):
         self.wall = [Tile(suit, val+1+(suit=="Honor")*10)
-                for suit in Mahjong.suits
-                for val in range(9)
-                for x in range(4)]
+                     for suit in Mahjong.suits
+                     for val in range(9)
+                     for x in range(4)]
         random.shuffle(self.wall)
 
     def addPlayers(self):
-        self.players = [Player(wind, self.wall) for wind in Mahjong.winds]
+        self.players = [Player(index, self.wall) for index in range(4)]
