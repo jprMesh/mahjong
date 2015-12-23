@@ -4,21 +4,24 @@ class Player:
     def __init__(self, wind, wall):
         self.wind = wind
         self.hand = []
+        self.faceup = []
         self.loadHand(wall)
 
+    # Load a starting hand from the game wall
     def loadHand(self, wall):
         for i in range(13):
             self.hand.append(wall.pop())
 
-    #draw from the wall, normal animation
+    # Draw from the wall
     def draw(self, wall):
         self.hand.append(wall.pop())
 
-    #draw from the wall, but have the animation draw from the back
-    def backDraw(self):
-        self.hand.append(wall.pop())
+    # Put tiles face up
+    def putFaceUp(self, tile):
+        self.faceup.append(tile)
+        self.hand.remove(tile)
 
-    #discard a tile, need to choose by mouse movements
+    # Discard a tile (pass in copy of tile you want to discard)
     def discard(self, tile, game):
         game.pile.append(tile)
         self.hand.remove(tile)
