@@ -24,6 +24,7 @@ class Mahjong:
         self.prevailingWind = 0
         self.pile = []
         self.turnIndic = 0
+        self.phase = "draw"
 
     def generateWall(self):
         self.wall = [Tile(suit, val+1+(suit=="Honor")*10)
