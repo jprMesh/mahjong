@@ -35,3 +35,19 @@ class Mahjong:
 
     def addPlayers(self):
         self.players = [Player(index, self.wall) for index in range(4)]
+
+    # Maybe these should have default implementations
+    # def drawPhase(self):
+    #     something
+
+    # def discardPhase(self):
+    #     something
+
+    # def pungPhase(self):
+    #     something
+
+    # def chiPhase(self):
+    #     something
+
+    # def faceupPhase(self):
+    #     something
